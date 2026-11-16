@@ -9,10 +9,15 @@ Do this before the first lecture. It is question 1 of the examples sheet.
 
 1. **Install a JDK, version 25.** Any distribution works. [Eclipse Temurin](https://adoptium.net/) is a good
    default; on macOS `brew install --cask temurin@25` also works. Check with `java -version` in a terminal.
-2. **Install an IDE.** [IntelliJ IDEA](https://www.jetbrains.com/idea/) is recommended (free for students).
-   IntelliJ can also download a JDK for you: *File > Project Structure > SDK > Download JDK*.
+2. **Install an editor.** Either works; use whichever you prefer.
+   - **VS Code:** install [VS Code](https://code.visualstudio.com/), then open this repository's folder.
+     It offers to install the *Extension Pack for Java*; accept. If it can't find your JDK, run
+     *Java: Configure Java Runtime* from the command palette (Ctrl/Cmd+Shift+P).
+   - **IntelliJ IDEA:** [IntelliJ IDEA](https://www.jetbrains.com/idea/) is free for students and can download
+     a JDK for you: *File > Project Structure > SDK > Download JDK*.
 3. **Clone your copy of this repository.** Use the link from the course page to get your own copy, then
-   `git clone <your copy's URL>`, or in IntelliJ *File > New > Project from Version Control*.
+   `git clone <your copy's URL>`. Or in VS Code use *Git: Clone* from the command palette, and in IntelliJ
+   *File > New > Project from Version Control*.
 4. **Run the tests** from the repository folder:
    ```
    ./mvnw test          # macOS, Linux
@@ -31,8 +36,9 @@ Do this before the first lecture. It is question 1 of the examples sheet.
 7. **Try `jshell`.** Type `jshell` in a terminal and print hello world in one line of code.
    `/exit` leaves it.
 
-If `./mvnw` says it cannot find Java, set `JAVA_HOME` to your JDK's folder, or run the tests from IntelliJ
-instead (right-click `src/test/java` > *Run 'All Tests'*).
+If `./mvnw` says it cannot find Java, set `JAVA_HOME` to your JDK's folder, or run the tests from your
+editor instead: the flask icon (*Testing*) in VS Code's sidebar, or right-click `src/test/java` > *Run 'All Tests'*
+in IntelliJ.
 
 ## Where things go
 
@@ -61,7 +67,7 @@ For every other question, add a new package or class wherever it makes sense.
 
 ## Tests, CI and coverage
 
-- `./mvnw test` compiles everything and runs every test. IntelliJ runs single tests with the green arrow
+- `./mvnw test` compiles everything and runs every test. Both editors run a single test from the arrow
   next to each `@Test`.
 - A failing test fails the build, both on your machine and on GitHub. That is what you want when you
   write tests first (Section 9).
